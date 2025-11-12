@@ -1,0 +1,89 @@
+:root{
+  --bg:#0b0b0b;
+  --text:#f1f1f1;
+  --muted:#a1a1aa;
+  --accent:#f59e0b;
+  --card:#121214;
+  --border:#27272a;
+  --link:#7db3ff;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial,sans-serif;
+  line-height:1.6;
+}
+
+/* Layout */
+.container{
+  max-width:760px;
+  margin:0 auto;
+  padding:48px 20px;
+  padding-bottom:140px;           /* ensures content stays above fixed footer */
+  min-height:100vh;
+}
+
+h1{font-size:1.9rem;margin:0 0 16px;font-weight:800}
+h2{font-size:1.25rem;margin:22px 0 8px;font-weight:700;color:var(--accent)}
+p{margin:0 0 12px}
+.lead{font-size:1.05rem}
+
+/* Sections */
+.section{margin:18px 0}
+.section-title{
+  cursor:pointer;
+  color:var(--accent);
+  text-decoration:underline transparent;
+  transition:text-decoration-color .18s ease;
+}
+.section-title:hover{ text-decoration-color: currentColor; }
+
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:16px;
+}
+
+.muted{color:var(--muted);font-size:.82rem;letter-spacing:.12em;text-transform:uppercase}
+.list{padding-left:1rem}
+.list li{margin:6px 0}
+a{color:var(--link)}
+a:focus,button:focus{outline:2px solid var(--accent);outline-offset:2px}
+
+.back{display:inline-block;margin-top:8px;color:var(--muted);text-decoration:underline}
+
+/* Footer nav */
+.footer{
+  position:fixed; left:0; right:0; bottom:0;
+  border-top:1px solid var(--border);
+  background:rgba(11,11,11,.92);
+  backdrop-filter:saturate(1.2) blur(6px);
+}
+.nav{
+  max-width:1000px;
+  margin:0 auto;
+  padding:10px 12px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  justify-content:center;
+}
+.nav button{
+  background:#171719;
+  color:var(--text);
+  border:1px solid var(--border);
+  border-radius:999px;
+  padding:7px 12px;
+  font-size:.9rem;
+  cursor:pointer;
+}
+.nav button:hover{border-color:#3f3f46}
+.nav button.active{border-color:var(--accent); box-shadow:0 0 0 2px rgba(245,158,11,.15) inset}
+
+/* Small helper for spacing wrapper used on Home */
+.stack > * + *{margin-top:12px}
